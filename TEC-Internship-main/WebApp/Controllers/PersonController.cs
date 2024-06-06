@@ -103,7 +103,28 @@ namespace WebApp.Controllers
             else
                 return View(person);
         }
-     
 
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                HttpClient client = new HttpClient();
+                HttpResponseMessage response = await client.DeleteAsync($"http://localhost:5229/api/persons/{id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Failed to delete the person. Please try again later.");
+                    return RedirectToAction("Index");
+                }
+            }
+            else
+                return RedirectToAction("Index");  
+        }
     }
 }
