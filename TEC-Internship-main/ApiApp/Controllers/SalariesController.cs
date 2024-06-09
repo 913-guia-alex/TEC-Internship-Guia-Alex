@@ -33,5 +33,20 @@ namespace Internship.Controllers
                 return NoContent();
             }
         }
+
+        [HttpPost]
+        public IActionResult AddSalary(Salary salary)
+        {
+            if (ModelState.IsValid)
+            {
+                var db = new APIDbContext();
+                db.Salaries.Add(salary);
+                db.SaveChanges();
+                return Created("", salary);
+            }
+            else
+                return BadRequest();
+
+        }
     }
 }
