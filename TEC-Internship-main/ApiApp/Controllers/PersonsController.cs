@@ -73,33 +73,6 @@ namespace Internship.Controllers
 
 
 
-        /*        [HttpPut]
-                public IActionResult UpdatePerson(Person person)
-                {
-
-                    if (ModelState.IsValid)
-                    {
-                        var db = new APIDbContext();
-                        Person updateperson = db.Persons.Find(person.Id);
-                        if (updateperson == null)
-                        {
-                            return NotFound();
-                        }
-                        updateperson.Address = person.Address;
-                        updateperson.Age = person.Age;
-                        updateperson.Email = person.Email;
-                        updateperson.Name = person.Name;
-                        updateperson.PositionId = person.PositionId;
-                        updateperson.SalaryId = person.SalaryId;
-                        updateperson.Surname = person.Surname;
-                        db.SaveChanges();
-                        return NoContent();
-                    }
-                    else
-                        return BadRequest();
-                }*/
-
-
         [HttpPut]
         public IActionResult UpdatePerson(Person person)
         {
