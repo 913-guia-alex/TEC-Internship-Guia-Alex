@@ -1,65 +1,58 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Update";
 }
 
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-@addTagHelper *,Microfost.AspNetCore.Mvc.TagHelpers
-@addTagHelper *,AuthoringTagHelpers
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
-@model Person
+
+@model WebApp.Models.Person
 
 <form method="post" asp-action="Update">
     <div class="form-row">
         <input asp-for="Id" hidden />
         <div class="col-md-4 mb-3">
-
-            <label> Person Name</label>
+            <label>Person Name</label>
             <input asp-for="Name" class="form-control" />
-
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="col-md-4 mb-3">
-
-            <label> Person Surname</label>
+            <label>Person Surname</label>
             <input asp-for="Surname" class="form-control" />
+            <span asp-validation-for="Surname" class="text-danger"></span>
         </div>
         <div class="col-md-4 mb-3">
-
-            <label> Age</label>
+            <label>Age</label>
             <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
         </div>
-
     </div>
     <div class="form-row">
         <div class="col-md-4 mb-3">
-
-            <label> Email</label>
+            <label>Email</label>
             <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="col-md-4 mb-3">
-
-            <label> Address</label>
+            <label>Address</label>
             <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
         </div>
-
     </div>
     <div class="form-row">
         <div class="col-md-4 mb-3">
-
-            <label> Position Id</label>
+            <label>Position Id</label>
             <input asp-for="PositionId" class="form-control" />
+            <span asp-validation-for="PositionId" class="text-danger"></span>
         </div>
         <div class="col-md-4 mb-3">
-
-            <label> Salary</label>
+            <label>Salary Id</label>
             <input asp-for="SalaryId" class="form-control" />
-        </div>
-
-        <div asp-validation-summary="ModelOnly">
-
+            <span asp-validation-for="SalaryId" class="text-danger"></span>
         </div>
     </div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
-
-
