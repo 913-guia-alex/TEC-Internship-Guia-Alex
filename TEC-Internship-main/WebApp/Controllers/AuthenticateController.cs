@@ -1,38 +1,23 @@
-﻿using WebApp.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿/*using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
+using WebApp.Models;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebApp.Controllers
 {
-    public class HomeController : Controller
+    public class AuthenticateController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<AuthenticateController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public AuthenticateController(ILogger<AuthenticateController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
         [HttpGet]
         public IActionResult Login()
         {
             return View();
-        }
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
         [HttpPost]
@@ -51,5 +36,13 @@ namespace WebApp.Controllers
             }
             return View("Login", login);
         }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
     }
 }
+*/

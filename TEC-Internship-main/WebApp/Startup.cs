@@ -40,7 +40,7 @@ namespace WebApp
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                
+
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
@@ -55,7 +55,7 @@ namespace WebApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Login}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
