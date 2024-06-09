@@ -8,6 +8,8 @@ namespace Internship.Model
         public DbSet<Position> Positions { get; set; }
         public DbSet<Salary> Salaries { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<PersonDetails> PersonDetails { get; set; }
+
         public string DbPath { get; }
 
         public APIDbContext()
